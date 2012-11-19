@@ -4,12 +4,17 @@
     <title>Login</title>
 </head>
 <body>
-<form action="/login" method="post">
+<form action="/login/" method="post" id="login_form">
+    {% csrf_token %}
     <label for="uid">User ID</label>
-    <input type="text" id="uid">
+    <input type="text" id="uid" name="uid">
     <label for="password">Password</label>
-    <input type="text" id="password">
+    <input type="password" id="password" name="password">
     <input type="submit" value="Login">
 </form>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/signpass.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/login.js"></script>
 </body>
 </html>
