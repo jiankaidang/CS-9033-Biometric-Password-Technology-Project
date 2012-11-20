@@ -33,7 +33,7 @@ def login_check(request):
     return HttpResponse(json.dumps(check_user(request)), mimetype='application/json')
 
 
-def login(request):
+def account(request):
     check_result = check_user(request)
     if not check_result['success']:
         raise Http404
