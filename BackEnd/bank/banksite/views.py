@@ -1,5 +1,5 @@
 # Create your views here.
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from django.http import HttpResponse, Http404
 from banksite.models import User
@@ -33,10 +33,26 @@ def login_check(request):
     return HttpResponse(json.dumps(check_user(request)), mimetype='application/json')
 
 
-def account(request):
+def login(request):
     check_result = check_user(request)
     if not check_result['success']:
         raise Http404
     uid = request.POST['uid']
     request.session['uid'] = uid
-    return render_to_response('banksite/account.html', {'uid': uid}, context_instance=RequestContext(request))
+    # Always return an HttpResponseRedirect after successfully dealing
+    # with POST data. This prevents data from being posted twice if a
+    # user hits the Back button.
+    return redirect('accounts')
+
+
+def accounts(request):
+    return render_to_response('banksite/accounts.html', {'uid': request.session['uid']},
+        context_instance=RequestContext(request))
+
+
+def logout(request):
+    try:
+        del request.session['uid']
+    except KeyError:
+        pass
+    return redirect('login_page')
