@@ -40,8 +40,6 @@
     // Dispose of any resources that can be recreated.
 }
 -(IBAction)Done:(id)sender{
-    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"test");
-    
+    [self dismissViewControllerAnimated:YES completion:NULL];    
 }
 @end

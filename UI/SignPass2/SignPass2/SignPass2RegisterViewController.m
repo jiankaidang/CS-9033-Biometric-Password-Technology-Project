@@ -17,8 +17,7 @@
 
 -(IBAction)Back:(id)sender
 {
-    [self.parentViewController dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"sub");
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

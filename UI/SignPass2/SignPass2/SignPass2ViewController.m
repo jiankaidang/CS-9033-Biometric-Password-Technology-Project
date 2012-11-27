@@ -30,11 +30,11 @@
     
     
     SignPass2RegisterViewController *nvc=[[SignPass2RegisterViewController alloc] initWithNibName:nil bundle:nil];
-    [self presentModalViewController:nvc animated:YES];
+    [self presentViewController:nvc animated:YES completion:NULL];
     
 }
 -(IBAction)logInView:(id)sender{
     SignPass2LogInViewController *logView=[[SignPass2LogInViewController alloc] initWithNibName:nil bundle:nil];
-    [self presentModalViewController:logView animated:YES];
+    [self presentViewController:logView animated:YES completion:NULL];
 }
 @end
