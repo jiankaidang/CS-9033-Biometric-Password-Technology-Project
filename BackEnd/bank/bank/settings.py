@@ -56,7 +56,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/Users/jiankaidang/Documents/MobileApplicationProgramming/CS-9033-Biometric-Password-Technology-Project/BackEnd/bank/static/'
+STATIC_ROOT = '/Library/WebServer/Documents/bank/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -106,7 +106,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/Users/jiankaidang/Documents/MobileApplicationProgramming/CS-9033-Biometric-Password-Technology-Project/BackEnd/bank/templates',
+    '/Library/WebServer/Documents/bank/templates',
     )
 
 INSTALLED_APPS = (
