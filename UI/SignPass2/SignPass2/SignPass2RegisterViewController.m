@@ -7,7 +7,7 @@
 //
 
 #import "SignPass2RegisterViewController.h"
-
+#import "SignPass2SignatureViewController.h"
 
 @interface SignPass2RegisterViewController ()
 
@@ -28,7 +28,7 @@
     return self;
 }
 -(IBAction)createSignature:(id)sender{
-    SignPass2CreateSignatureViewController *csp=[[SignPass2CreateSignatureViewController alloc] initWithNibName:nil bundle:nil];
+    SignPass2SignatureViewController *csp=[[SignPass2SignatureViewController alloc] initWithNibName:nil bundle:nil];
     [self presentModalViewController:csp animated:YES];
     
 }

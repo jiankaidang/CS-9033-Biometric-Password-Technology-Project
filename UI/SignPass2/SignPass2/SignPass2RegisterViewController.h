@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SignPass2CreateSignatureViewController.h"
 
 @interface SignPass2RegisterViewController : UIViewController
 {

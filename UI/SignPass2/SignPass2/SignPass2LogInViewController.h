@@ -11,9 +11,11 @@
 @interface SignPass2LogInViewController : UIViewController
 {
     IBOutlet UITextField *usernameText;
+    __weak IBOutlet UIButton *verifySignature;
 }
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 -(IBAction)Done:(id)sender;
 -(void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated;
 -(void)dismissModalViewControllerAnimated:(BOOL)animated;
+- (IBAction)verifySignatureAction;
 @end

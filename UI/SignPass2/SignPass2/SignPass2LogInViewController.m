@@ -7,7 +7,7 @@
 //
 
 #import "SignPass2LogInViewController.h"
-
+#import "SignPass2SignatureViewController.h"
 @interface SignPass2LogInViewController ()
 
 @end
@@ -41,5 +41,9 @@
 }
 -(IBAction)Done:(id)sender{
     [self dismissViewControllerAnimated:YES completion:NULL];    
+}
+- (IBAction)verifySignatureAction {
+    SignPass2SignatureViewController *csp=[[SignPass2SignatureViewController alloc] initWithNibName:nil bundle:nil];
+    [self presentModalViewController:csp animated:YES];
 }
 @end

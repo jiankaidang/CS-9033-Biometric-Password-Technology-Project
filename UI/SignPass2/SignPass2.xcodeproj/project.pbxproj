@@ -26,10 +26,20 @@
 		4370684616310D12008CD73C /* Icon-SignPass200*200.png in Resources */ = {isa = PBXBuildFile; fileRef = 4370684516310D12008CD73C /* Icon-SignPass200*200.png */; };
 		43972D241652D89700458FB2 /* SignPass2RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D221652D89700458FB2 /* SignPass2RegisterViewController.m */; };
 		43972D251652D89700458FB2 /* SignPass2RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43972D231652D89700458FB2 /* SignPass2RegisterViewController.xib */; };
-		43972D291652FC3A00458FB2 /* SignPass2CreateSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D271652FC3A00458FB2 /* SignPass2CreateSignatureViewController.m */; };
-		43972D2A1652FC3A00458FB2 /* SignPass2CreateSignatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43972D281652FC3A00458FB2 /* SignPass2CreateSignatureViewController.xib */; };
 		43972D2E165405D200458FB2 /* SignPass2LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43972D2C165405D200458FB2 /* SignPass2LogInViewController.m */; };
 		43972D2F165405D200458FB2 /* SignPass2LogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43972D2D165405D200458FB2 /* SignPass2LogInViewController.xib */; };
+		8D72DD73166B9D19006F75B1 /* EB.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D72DD6E166B9D19006F75B1 /* EB.png */; };
+		8D72DD74166B9D19006F75B1 /* EBP.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D72DD6F166B9D19006F75B1 /* EBP.png */; };
+		8D72DD75166B9D19006F75B1 /* Particle.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D72DD70166B9D19006F75B1 /* Particle.png */; };
+		8D72DD76166B9D19006F75B1 /* VB.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D72DD71166B9D19006F75B1 /* VB.png */; };
+		8D72DD77166B9D19006F75B1 /* VBP.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D72DD72166B9D19006F75B1 /* VBP.png */; };
+		8D72DD7A166B9D35006F75B1 /* SignPass2SignatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D72DD79166B9D35006F75B1 /* SignPass2SignatureViewController.xib */; };
+		8D72DD7E166B9D9D006F75B1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D72DD7B166B9D9D006F75B1 /* AudioToolbox.framework */; };
+		8D72DD7F166B9D9D006F75B1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D72DD7C166B9D9D006F75B1 /* OpenGLES.framework */; };
+		8D72DD80166B9D9D006F75B1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D72DD7D166B9D9D006F75B1 /* QuartzCore.framework */; };
+		8D72DD84166B9E21006F75B1 /* SignPass2SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D72DD82166B9E21006F75B1 /* SignPass2SignatureViewController.m */; };
+		8D72DD8A166BA03D006F75B1 /* PaintingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D72DD87166BA03D006F75B1 /* PaintingView.m */; };
+		8D72DD8B166BA03D006F75B1 /* PaintingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D72DD89166BA03D006F75B1 /* PaintingWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,12 +79,24 @@
 		43972D211652D89700458FB2 /* SignPass2RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignPass2RegisterViewController.h; sourceTree = "<group>"; };
 		43972D221652D89700458FB2 /* SignPass2RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignPass2RegisterViewController.m; sourceTree = "<group>"; };
 		43972D231652D89700458FB2 /* SignPass2RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignPass2RegisterViewController.xib; sourceTree = "<group>"; };
-		43972D261652FC3A00458FB2 /* SignPass2CreateSignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignPass2CreateSignatureViewController.h; sourceTree = "<group>"; };
-		43972D271652FC3A00458FB2 /* SignPass2CreateSignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignPass2CreateSignatureViewController.m; sourceTree = "<group>"; };
-		43972D281652FC3A00458FB2 /* SignPass2CreateSignatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignPass2CreateSignatureViewController.xib; sourceTree = "<group>"; };
 		43972D2B165405D200458FB2 /* SignPass2LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignPass2LogInViewController.h; sourceTree = "<group>"; };
 		43972D2C165405D200458FB2 /* SignPass2LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignPass2LogInViewController.m; sourceTree = "<group>"; };
 		43972D2D165405D200458FB2 /* SignPass2LogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignPass2LogInViewController.xib; sourceTree = "<group>"; };
+		8D72DD6E166B9D19006F75B1 /* EB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EB.png; sourceTree = "<group>"; };
+		8D72DD6F166B9D19006F75B1 /* EBP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EBP.png; sourceTree = "<group>"; };
+		8D72DD70166B9D19006F75B1 /* Particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Particle.png; sourceTree = "<group>"; };
+		8D72DD71166B9D19006F75B1 /* VB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VB.png; sourceTree = "<group>"; };
+		8D72DD72166B9D19006F75B1 /* VBP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VBP.png; sourceTree = "<group>"; };
+		8D72DD79166B9D35006F75B1 /* SignPass2SignatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignPass2SignatureViewController.xib; sourceTree = "<group>"; };
+		8D72DD7B166B9D9D006F75B1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		8D72DD7C166B9D9D006F75B1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		8D72DD7D166B9D9D006F75B1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8D72DD81166B9E21006F75B1 /* SignPass2SignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignPass2SignatureViewController.h; sourceTree = "<group>"; };
+		8D72DD82166B9E21006F75B1 /* SignPass2SignatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignPass2SignatureViewController.m; sourceTree = "<group>"; };
+		8D72DD86166BA03D006F75B1 /* PaintingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintingView.h; sourceTree = "<group>"; };
+		8D72DD87166BA03D006F75B1 /* PaintingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintingView.m; sourceTree = "<group>"; };
+		8D72DD88166BA03D006F75B1 /* PaintingWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaintingWindow.h; sourceTree = "<group>"; };
+		8D72DD89166BA03D006F75B1 /* PaintingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaintingWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D72DD7E166B9D9D006F75B1 /* AudioToolbox.framework in Frameworks */,
+				8D72DD7F166B9D9D006F75B1 /* OpenGLES.framework in Frameworks */,
+				8D72DD80166B9D9D006F75B1 /* QuartzCore.framework in Frameworks */,
 				4370680B163106AE008CD73C /* UIKit.framework in Frameworks */,
 				4370680D163106AE008CD73C /* Foundation.framework in Frameworks */,
 				4370680F163106AE008CD73C /* CoreGraphics.framework in Frameworks */,
@@ -104,6 +129,9 @@
 		437067FB163106AE008CD73C = {
 			isa = PBXGroup;
 			children = (
+				8D72DD7B166B9D9D006F75B1 /* AudioToolbox.framework */,
+				8D72DD7C166B9D9D006F75B1 /* OpenGLES.framework */,
+				8D72DD7D166B9D9D006F75B1 /* QuartzCore.framework */,
 				43706810163106AE008CD73C /* SignPass2 */,
 				43706834163106AE008CD73C /* SignPass2Tests */,
 				43706809163106AE008CD73C /* Frameworks */,
@@ -134,17 +162,20 @@
 		43706810163106AE008CD73C /* SignPass2 */ = {
 			isa = PBXGroup;
 			children = (
+				8D72DD86166BA03D006F75B1 /* PaintingView.h */,
+				8D72DD87166BA03D006F75B1 /* PaintingView.m */,
+				8D72DD88166BA03D006F75B1 /* PaintingWindow.h */,
+				8D72DD89166BA03D006F75B1 /* PaintingWindow.m */,
 				43706819163106AE008CD73C /* SignPass2AppDelegate.h */,
 				4370681A163106AE008CD73C /* SignPass2AppDelegate.m */,
 				43706822163106AE008CD73C /* SignPass2ViewController.h */,
+				8D72DD81166B9E21006F75B1 /* SignPass2SignatureViewController.h */,
+				8D72DD82166B9E21006F75B1 /* SignPass2SignatureViewController.m */,
 				43706823163106AE008CD73C /* SignPass2ViewController.m */,
 				43972D211652D89700458FB2 /* SignPass2RegisterViewController.h */,
 				43972D221652D89700458FB2 /* SignPass2RegisterViewController.m */,
-				43972D261652FC3A00458FB2 /* SignPass2CreateSignatureViewController.h */,
-				43972D271652FC3A00458FB2 /* SignPass2CreateSignatureViewController.m */,
 				43972D2B165405D200458FB2 /* SignPass2LogInViewController.h */,
 				43972D2C165405D200458FB2 /* SignPass2LogInViewController.m */,
-				43972D281652FC3A00458FB2 /* SignPass2CreateSignatureViewController.xib */,
 				43972D2D165405D200458FB2 /* SignPass2LogInViewController.xib */,
 				43972D231652D89700458FB2 /* SignPass2RegisterViewController.xib */,
 				43706825163106AE008CD73C /* SignPass2ViewController.xib */,
@@ -156,6 +187,12 @@
 		43706811163106AE008CD73C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8D72DD79166B9D35006F75B1 /* SignPass2SignatureViewController.xib */,
+				8D72DD6E166B9D19006F75B1 /* EB.png */,
+				8D72DD6F166B9D19006F75B1 /* EBP.png */,
+				8D72DD70166B9D19006F75B1 /* Particle.png */,
+				8D72DD71166B9D19006F75B1 /* VB.png */,
+				8D72DD72166B9D19006F75B1 /* VBP.png */,
 				4370684516310D12008CD73C /* Icon-SignPass200*200.png */,
 				43706812163106AE008CD73C /* SignPass2-Info.plist */,
 				43706813163106AE008CD73C /* InfoPlist.strings */,
@@ -266,8 +303,13 @@
 				43706827163106AE008CD73C /* SignPass2ViewController.xib in Resources */,
 				4370684616310D12008CD73C /* Icon-SignPass200*200.png in Resources */,
 				43972D251652D89700458FB2 /* SignPass2RegisterViewController.xib in Resources */,
-				43972D2A1652FC3A00458FB2 /* SignPass2CreateSignatureViewController.xib in Resources */,
 				43972D2F165405D200458FB2 /* SignPass2LogInViewController.xib in Resources */,
+				8D72DD73166B9D19006F75B1 /* EB.png in Resources */,
+				8D72DD74166B9D19006F75B1 /* EBP.png in Resources */,
+				8D72DD75166B9D19006F75B1 /* Particle.png in Resources */,
+				8D72DD76166B9D19006F75B1 /* VB.png in Resources */,
+				8D72DD77166B9D19006F75B1 /* VBP.png in Resources */,
+				8D72DD7A166B9D35006F75B1 /* SignPass2SignatureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,8 +348,10 @@
 				4370681B163106AE008CD73C /* SignPass2AppDelegate.m in Sources */,
 				43706824163106AE008CD73C /* SignPass2ViewController.m in Sources */,
 				43972D241652D89700458FB2 /* SignPass2RegisterViewController.m in Sources */,
-				43972D291652FC3A00458FB2 /* SignPass2CreateSignatureViewController.m in Sources */,
 				43972D2E165405D200458FB2 /* SignPass2LogInViewController.m in Sources */,
+				8D72DD84166B9E21006F75B1 /* SignPass2SignatureViewController.m in Sources */,
+				8D72DD8A166BA03D006F75B1 /* PaintingView.m in Sources */,
+				8D72DD8B166BA03D006F75B1 /* PaintingWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
