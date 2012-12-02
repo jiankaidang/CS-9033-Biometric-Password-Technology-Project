@@ -17,8 +17,8 @@ $.ajaxSetup({
 });
 $(function () {
     $(document.body).append('<div id="dialog" style="display: none;">' +
-        'First time login with SignPass?<br>' +
-        'If yes, please login to your bank account!' +
+        '<p>First time login with SignPass?</p>' +
+        '<p style="font-size:0.8em">If yes, please login to your bank account first!</p>' +
         '</div>');
     $("#SignPass").click(function () {
         if ($.cookie("uid")) {
@@ -28,17 +28,17 @@ $(function () {
         $("#dialog").dialog({
             buttons:[
                 {
-                    text:"No",
-                    click:function () {
-                        openSignPassWindow();
-                        $(this).dialog("close");
-                    }
-                },
-                {
                     text:"Yes",
                     click:function () {
                         $(this).dialog("close");
                         $("#uid").focus();
+                    }
+                },
+                {
+                    text:"No",
+                    click:function () {
+                        openSignPassWindow();
+                        $(this).dialog("close");
                     }
                 }
             ],
