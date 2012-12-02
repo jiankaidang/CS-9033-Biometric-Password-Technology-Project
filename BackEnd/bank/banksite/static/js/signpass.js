@@ -18,7 +18,7 @@ $.ajaxSetup({
 $(function () {
     $(document.body).append('<div id="dialog" style="display: none;">' +
         '<p>First time login with SignPass?</p>' +
-        '<p style="font-size:0.8em">If yes, please login to your bank account first!</p>' +
+        '<p style="font-size:0.8em">If yes, please login to your bank account first, and then connect with SignPass!</p>' +
         '</div>');
     $("#SignPass").click(function () {
         if ($.cookie("uid")) {
