@@ -43,7 +43,7 @@
 	[drawingView setBrushColorWithRed:components[0] green:components[1] blue:components[2]];
     [drawingView setBackgroundColor:[UIColor whiteColor]];
     
-    CGRect frame = CGRectMake(10.0, 10.0, 30, 115);
+    CGRect frame = CGRectMake(5.0, 10.0, 30, 115);
     UIButton *button = [[UIButton alloc] initWithFrame:frame];
     
     button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -66,7 +66,7 @@
     [button addTarget:self action:@selector(collectSignatureArray:)forControlEvents:UIControlEventTouchUpInside];
     
     
-    CGRect frameErase = CGRectMake(10.0, 355.0, 30, 115);
+    CGRect frameErase = CGRectMake(5.0, 355.0, 30, 115);
     UIButton *buttonErase = [[UIButton alloc] initWithFrame:frameErase];
     
     buttonErase.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -88,9 +88,10 @@
     buttonErase.backgroundColor = [UIColor clearColor];
     [buttonErase addTarget:self action:@selector(eraseView:)forControlEvents:UIControlEventTouchUpInside];
     
-    [drawingView addSubview:button];
-    [drawingView addSubview:buttonErase];
-    
+    [self.view addSubview:button];
+    [self.view addSubview:buttonErase];
+    [self.view addSubview:buttonErase];
+    [self.view setBackgroundColor:[UIColor blackColor]];
     //    //[myButton addTarget:self action:@selector(goBackButtonClicked:)forControlEvents:UIControlEventTouchUpInside];
     // Look in the Info.plist file and you'll see the status bar is hidden
 	// Set the style to black so it matches the background of the application

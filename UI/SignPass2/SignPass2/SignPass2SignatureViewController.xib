@@ -46,7 +46,7 @@
 					<object class="IBUIView" id="773737154">
 						<reference key="NSNextResponder" ref="380026005"/>
 						<int key="NSvFlags">1298</int>
-						<string key="NSFrameSize">{320, 480}</string>
+						<string key="NSFrame">{{40, 0}, {280, 480}}</string>
 						<reference key="NSSuperview" ref="380026005"/>
 						<reference key="NSWindow"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -220,35 +220,14 @@
 					<string key="className">SignPass2SignatureViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="outlets">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>drawingView</string>
-							<string>window</string>
-						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>PaintingView</string>
-							<string>PaintingWindow</string>
-						</object>
+						<string key="NS.key.0">drawingView</string>
+						<string key="NS.object.0">PaintingView</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<bool key="EncodedWithXMLCoder">YES</bool>
-						<object class="NSArray" key="dict.sortedKeys">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>drawingView</string>
-							<string>window</string>
-						</object>
-						<object class="NSArray" key="dict.values">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBToOneOutletInfo">
-								<string key="name">drawingView</string>
-								<string key="candidateClassName">PaintingView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">window</string>
-								<string key="candidateClassName">PaintingWindow</string>
-							</object>
+						<string key="NS.key.0">drawingView</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">drawingView</string>
+							<string key="candidateClassName">PaintingView</string>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
