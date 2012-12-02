@@ -15,3 +15,38 @@ $.ajaxSetup({
         }
     }
 });
+$(function () {
+    $(document.body).append('<div id="dialog" style="display: none;">' +
+        'First time login with SignPass?<br>' +
+        'If yes, please login to your bank account!' +
+        '</div>');
+    $("#SignPass").click(function () {
+        if ($.cookie("uid")) {
+            openSignPassWindow();
+            return;
+        }
+        $("#dialog").dialog({
+            buttons:[
+                {
+                    text:"No",
+                    click:function () {
+                        openSignPassWindow();
+                        $(this).dialog("close");
+                    }
+                },
+                {
+                    text:"Yes",
+                    click:function () {
+                        $(this).dialog("close");
+                        $("#uid").focus();
+                    }
+                }
+            ],
+            modal:true,
+            title:"Login with SignPass"
+        });
+    });
+});
+function openSignPassWindow() {
+    window.open("http://192.168.0.1:8000/signpass/service", "SignPass");
+}

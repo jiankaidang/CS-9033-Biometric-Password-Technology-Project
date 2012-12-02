@@ -42,7 +42,9 @@ def login(request):
     # Always return an HttpResponseRedirect after successfully dealing
     # with POST data. This prevents data from being posted twice if a
     # user hits the Back button.
-    return redirect('accounts')
+    response = redirect('accounts')
+    response.set_signed_cookie("uid", uid)
+    return response
 
 
 def accounts(request):
@@ -55,4 +57,6 @@ def logout(request):
         del request.session['uid']
     except KeyError:
         pass
-    return redirect('login_page')
+    response = redirect('login_page')
+    response.delete_cookie('uid')
+    return response
