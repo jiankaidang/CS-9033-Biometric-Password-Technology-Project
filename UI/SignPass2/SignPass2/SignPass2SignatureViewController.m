@@ -90,7 +90,6 @@
     
     [self.view addSubview:button];
     [self.view addSubview:buttonErase];
-    [self.view addSubview:buttonErase];
     [self.view setBackgroundColor:[UIColor blackColor]];
     //    //[myButton addTarget:self action:@selector(goBackButtonClicked:)forControlEvents:UIControlEventTouchUpInside];
     // Look in the Info.plist file and you'll see the status bar is hidden

@@ -34,7 +34,6 @@
 		8D72DD76166B9D19006F75B1 /* VB.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D72DD71166B9D19006F75B1 /* VB.png */; };
 		8D72DD77166B9D19006F75B1 /* VBP.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D72DD72166B9D19006F75B1 /* VBP.png */; };
 		8D72DD7A166B9D35006F75B1 /* SignPass2SignatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D72DD79166B9D35006F75B1 /* SignPass2SignatureViewController.xib */; };
-		8D72DD7E166B9D9D006F75B1 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D72DD7B166B9D9D006F75B1 /* AudioToolbox.framework */; };
 		8D72DD7F166B9D9D006F75B1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D72DD7C166B9D9D006F75B1 /* OpenGLES.framework */; };
 		8D72DD80166B9D9D006F75B1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D72DD7D166B9D9D006F75B1 /* QuartzCore.framework */; };
 		8D72DD84166B9E21006F75B1 /* SignPass2SignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D72DD82166B9E21006F75B1 /* SignPass2SignatureViewController.m */; };
@@ -88,7 +87,6 @@
 		8D72DD71166B9D19006F75B1 /* VB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VB.png; sourceTree = "<group>"; };
 		8D72DD72166B9D19006F75B1 /* VBP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VBP.png; sourceTree = "<group>"; };
 		8D72DD79166B9D35006F75B1 /* SignPass2SignatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignPass2SignatureViewController.xib; sourceTree = "<group>"; };
-		8D72DD7B166B9D9D006F75B1 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8D72DD7C166B9D9D006F75B1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8D72DD7D166B9D9D006F75B1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8D72DD81166B9E21006F75B1 /* SignPass2SignatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignPass2SignatureViewController.h; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D72DD7E166B9D9D006F75B1 /* AudioToolbox.framework in Frameworks */,
 				8D72DD7F166B9D9D006F75B1 /* OpenGLES.framework in Frameworks */,
 				8D72DD80166B9D9D006F75B1 /* QuartzCore.framework in Frameworks */,
 				4370680B163106AE008CD73C /* UIKit.framework in Frameworks */,
@@ -129,7 +126,6 @@
 		437067FB163106AE008CD73C = {
 			isa = PBXGroup;
 			children = (
-				8D72DD7B166B9D9D006F75B1 /* AudioToolbox.framework */,
 				8D72DD7C166B9D9D006F75B1 /* OpenGLES.framework */,
 				8D72DD7D166B9D9D006F75B1 /* QuartzCore.framework */,
 				43706810163106AE008CD73C /* SignPass2 */,
