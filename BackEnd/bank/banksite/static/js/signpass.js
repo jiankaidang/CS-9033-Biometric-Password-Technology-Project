@@ -48,5 +48,5 @@ $(function () {
     });
 });
 function openSignPassWindow() {
-    window.open("http://192.168.0.1:8000/signpass/service", "SignPass");
+    window.open("http://192.168.0.1:8000/signpass/service?service_id=101&service_uid=" + $("#uid").val(), "SignPass");
 }

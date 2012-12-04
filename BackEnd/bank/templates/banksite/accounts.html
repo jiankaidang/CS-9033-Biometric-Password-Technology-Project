@@ -139,7 +139,9 @@
                 </td>
             </tr>
             <tr>
-                <td><h1>Welcome <!--mp_trans_disable_start-->{{ uid }}<!--mp_trans_disable_end--></h1></td>
+                <td><h1>Welcome <!--mp_trans_disable_start-->{{ uid }}<!--mp_trans_disable_end-->
+                    <input type="hidden" id="uid" value="{{ uid }}">
+                </h1></td>
                 <td align="right">
                     <img id="SignPass"
                          src="{{ STATIC_URL }}images/ConnectWithSignPass.png"
@@ -1056,5 +1058,6 @@
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-ui-1.9.2.custom.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/signpass.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/accounts.js"></script>
 </body>
 </html>
