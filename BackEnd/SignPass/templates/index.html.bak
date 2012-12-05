@@ -1,0 +1,12 @@
+{% extends "base.html"%}
+{%block title%}Login{%endblock%}
+
+{%block content%}
+		<h1>Heading</h1>
+		<form method="POST" action="/sign/service/{{page_name}}/edit/">
+		{% csrf_token %}
+			<textarea name="content" rows="20" cols="60">{{"content"}}</textarea><br/>
+			Tags:<input name="tags" value="" maxlength="60" size="60"/><br/>
+			<input type="submit" value="Save Page"/>
+		</form>
+{%endblock%}
