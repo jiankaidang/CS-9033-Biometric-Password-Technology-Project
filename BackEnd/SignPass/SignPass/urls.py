@@ -6,10 +6,16 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^signpass/service/checkBinding/$','sign.views.checkBinding'), 
+    url(r'^signpass/service/bind$','sign.views.bind',name='bindRequest'),
     url(r'^signpass/service$','sign.views.index'), 
-    url(r'^signpass/(?P<username>[^/]+)/bind$','sign.views.bind'),  
+    url(r'^signpass/ios/(?P<username>[^/]+)/check_username/$','sign.views.checkUsername'),
+    url(r'^signpass/(?P<service_name>[^/]+)/(?P<service_uid>[^/]+)/bind$','sign.views.bindRequestFromBank'),    
     url(r'^signpass/ios/(?P<username>[^/]+)/login/$','sign.views.login'),                 
-    url(r'^signpass/ios/(?P<username>[^/]+)/register/$','sign.views.register'), 
+    url(r'^signpass/ios/register/$','sign.views.register'), 
+    url(r'^signpass/ios/verify/$','sign.views.verifySign'), 
+    url(r'^signpass/ios/modify/$','sign.views.modifySign'), 
+
+
 
   # Examples:
   # url(r'^$', 'SignPass.views.home', name='home'),
