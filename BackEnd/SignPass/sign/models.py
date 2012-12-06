@@ -33,7 +33,9 @@ class Verify(models.Model):
   binding=models.ForeignKey('Binding')
   timestamp=models.DateTimeField()
   attempt_time=models.SmallIntegerField(default=0)
-  
-  
+
+class IPhone(models.Model):
+    udid = models.CharField(max_length=40, primary_key=True)
+    dev_token = models.CharField(max_length=64)
   
   

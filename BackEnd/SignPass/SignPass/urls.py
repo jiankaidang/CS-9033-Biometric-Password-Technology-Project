@@ -13,8 +13,9 @@ urlpatterns = patterns('',
     url(r'^signpass/ios/(?P<username>[^/]+)/login/$','sign.views.login'),                 
     url(r'^signpass/ios/register/$','sign.views.register'), 
     url(r'^signpass/ios/verify/$','sign.views.verifySign'), 
-    url(r'^signpass/ios/modify/$','sign.views.modifySign'), 
-
+    url(r'^signpass/ios/modify/$','sign.views.modifySign'),
+    url(r'^signpass/ios/register_pushnotif$', 'sign.views.register_pushnotif'),
+    url(r'^signpass/send_notification$', 'sign.views.send_notification'),
 
 
   # Examples:
