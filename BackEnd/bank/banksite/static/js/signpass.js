@@ -25,28 +25,30 @@ $(function () {
             openSignPassWindow();
             return;
         }
-        $("#dialog").dialog({
-            buttons:[
-                {
-                    text:"Yes",
-                    click:function () {
-                        $(this).dialog("close");
-                        $("#uid").focus();
-                    }
-                },
-                {
-                    text:"No",
-                    click:function () {
-                        openSignPassWindow();
-                        $(this).dialog("close");
-                    }
-                }
-            ],
-            modal:true,
-            title:"Login with SignPass"
+        $.post("/signpass_login", {
+            service_uid:$("#uid").val()
+        }, function (data) {
+            if (!data.success) {
+                login_form.data(LOGIN_CHECK_SUCCEEDED, false);
+                $("#dialog").dialog({
+                    buttons:[
+                        {
+                            text:"OK",
+                            click:function () {
+                                $(this).dialog("close");
+                                $("#uid").focus();
+                            }
+                        }
+                    ],
+                    modal:true,
+                    title:"Login with SignPass"
+                });
+                return;
+            }
+            login_form.data(LOGIN_CHECK_SUCCEEDED, true).submit();
         });
     });
 });
 function openSignPassWindow() {
-    window.open("http://192.168.0.1:8000/signpass/service?service_id=101&service_uid=" + $("#uid").val(), "SignPass");
+    window.open("http://192.168.0.1:8000/signpass/chase/service_uid=" + $("#uid").val(), "SignPass");
 }
