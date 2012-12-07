@@ -30,9 +30,6 @@ $(function () {
                     }
                 });
             }, 3000);
-			setTimeout(function () {
-							window.clearInterval(intervalID);
-						}, 180000);
 
 
 /*         websocket = new WebSocket("ws://192.168.0.15:8000/signpass/service/bind");    

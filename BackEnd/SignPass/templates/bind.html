@@ -4,20 +4,21 @@
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/signpass.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/login.js"></script>
 
 {%endblock%}
 {%block title%}Login{%endblock%}
 
 {%block content%}
 		<h1>Heading</h1>
- <form action="{% url'bindRequest' %}" method="post" id="login_form">
+ <form action="" method="post" id="login_form">
         {% csrf_token %}
         <table id="secureLogonTable" width="270" height="170" border="0" cellpadding="0"
                cellspacing="0" bgcolor="#F2F2E1">
             <tr align="center">
                 <td width="5">&nbsp;</td>
                 <td height="35" colspan="3" class="bodyTextSecureLogon">
-                    Secure Log On
+					SignPass is binding to {{service_name}}
                 </td>
             </tr>
             <tr>
@@ -28,19 +29,25 @@
                          width="10" height="10"/>
                 </td>
                 <td>
-                    <input id="uid" name="uid" type="text"
+                    <input id="username" name="username" type="text"
                            maxlength="32" tabindex="1"
-                           title="Type the User ID." style="width: 160;"/>
+                           title="Enter your signpass username" style="width: 160;"/>
                     <!--mp_trans_schedule_disable_start-->
 
                     <!--mp_trans_schedule_disable_end-->
                 </td>
             </tr>
-           
-              <input id="{{service_name}}" name="service_name" type="hidden"/>
-              <input id="{{service_uid}}" name="service_uid" type="hidden"/>
+            <tr align="center">
+                <td width="5">&nbsp;</td>
+                <td height="35" colspan="3" class="bodyTextSecureLogon">
+                     <input type="submit" value="Bind SignPass"/>
+                </td>
+            </tr>
+              <input id="service_name" name="service_name" value="{{service_name}}" type="hidden"/>
+              <input id="service_uid" name="service_uid" value="{{service_uid}}" type="hidden"/>
+			 
         </table>
     </form>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/login.js"></script>
+   
 {%endblock%}
 

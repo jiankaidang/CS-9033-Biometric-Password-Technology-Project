@@ -71,7 +71,7 @@ def signpass_login(request):
     user = User.objects.get(uid=service_uid)
     service_name = 'chase'
     ws = websocket.create_connection(
-        "ws://192.168.0.15:8000/signpass/" + service_name + "/" + user.id + "/serviceLogin")
+        "ws://192.168.0.13:8000/signpass/" + service_name + "/" + user.id + "/serviceLogin")
     ws.send()
     print("socket")
     result = ws.recv()
