@@ -155,8 +155,9 @@ def send_notification(request):
 
     # Send a notification
     token_hex = IPhone.objects.all()[0].dev_token
-    payload = Payload(alert="Hello World!", sound="default", badge=1, custom={
-        'userName': 'Jiankai'
+    payload = Payload(alert="Login Chase with SignPass!", sound="default", badge=1, custom={
+        'userName': 'Jiankai',
+        'serviceName': 'Chase'
     })
     apns.gateway_server.send_notification(token_hex, payload)
     return HttpResponse()
