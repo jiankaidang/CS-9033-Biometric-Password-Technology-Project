@@ -93,40 +93,39 @@ def verifySuccessed(binding_id):
  return 1 when binding is not existing
 '''
 def checkBinding(request):
-  if request.method == 'POST':
-    service_name=request.POST["service_name"]
-    service_uid=request.POST["service_uid"]
-    username=request.POST["username"]
-  else:
-    return HttpResponse(json.dumps({'success':0,'msg':"not a POST request"}))
-  try:
-    user=User.objects.get(username=username)
-    piece=Piece.objects.get(user=user)
-    service=Service.objects.get(service_name=service_name)
-    binding=Binding.objects.get(service=service,service_uid=service_uid)
-    if piece.id==binding.piece.id:
-      return HttpResponse(json.dumps({'success':0,'msg':"binding is existing"}))
+    if request.method == 'POST':
+        service_name=request.POST["service_name"]
+        service_uid=request.POST["service_uid"]
+        username=request.POST["username"]
     else:
-      return HttpResponse(json.dumps({'success':0,'msg':"username and service is NOT matched"}))
-  except User.DoesNotExist:
-    return HttpResponse(json.dumps({'success':0,'msg':"%s not existing"%username}))
-  except Piece.DoesNotExist:
-    return HttpResponse(json.dumps({'success':0,'msg':"Piece not existing"}))
-  except Service.DoesNotExist:
-    return HttpResponse(json.dumps({'success':0,'msg':"service %s is not registered"%service_name}))
-  except Binding.DoesNotExist:
+        return HttpResponse(json.dumps({'success':0,'msg':"not a POST request"}))
     try:
-      iPhone=IPhone.objects.get(piece=piece)
-      apns = APNs(use_sandbox=True, cert_file='/Users/jiankaidang/Documents/MobileApplicationProgramming/CS-9033-Biometric-Password-Technology-Project/BackEnd/SignPass/sign/Certificates.pem')
-      token_hex = iPhone.dev_token
-      payload = Payload(alert="Login Chase with SignPass!", sound="default", badge=1, custom={
-          'userName':username ,
-          'serviceName': service_name
-      })
-      apns.gateway_server.send_notification(token_hex, payload)
-      return HttpResponse(json.dumps({'success':1,'msg':"binding is NOT existing"}))
-    except IPhone.DoesNotExist:  
-      return HttpResponse(json.dumps({'success':0,'msg':"iphone is not registered"}))
+        user=User.objects.get(username=username)
+        piece=Piece.objects.get(user=user)
+        service=Service.objects.get(service_name=service_name)
+        binding=Binding.objects.get(service=service,service_uid=service_uid)
+        if piece.id==binding.piece.id:
+            return HttpResponse(json.dumps({'success':0,'msg':"binding is existing"}))
+        else:
+            return HttpResponse(json.dumps({'success':0,'msg':"username and service is NOT matched"}))
+    except User.DoesNotExist:
+        return HttpResponse(json.dumps({'success':0,'msg':"%s not existing"%username}))
+    except Piece.DoesNotExist:
+        return HttpResponse(json.dumps({'success':0,'msg':"Piece not existing"}))
+    except Service.DoesNotExist:
+        return HttpResponse(json.dumps({'success':0,'msg':"service %s is not registered"%service_name}))
+    except Binding.DoesNotExist:
+        try:
+            iPhone=IPhone.objects.get(piece=piece)
+            apns = APNs(use_sandbox=True, cert_file="/Users/jiankaidang/Documents/MobileApplicationProgramming/CS-9033-Biometric-Password-Technology-Project/BackEnd/SignPass/sign/Certificates.pem")
+            token_hex = iPhone.dev_token
+            payload = Payload(alert="Login Chase with SignPass!", sound="default", badge=1, custom={
+                'username':username,'service_name': service_name, 'service_uid':service_uid,'requestType':'bind'
+            })
+            apns.gateway_server.send_notification(token_hex, payload)
+            return HttpResponse(json.dumps({'success':1,'msg':"binding is NOT existing"}))
+        except IPhone.DoesNotExist:
+            return HttpResponse(json.dumps({'success':0,'msg':"iphone is not registered"}))
 #    except Exception as e:
 #      print '%s (%s)' % (e.message, type(e))
   
@@ -155,25 +154,48 @@ def verifyService(binding_id,signature):
     return HttpResponse("please sign again")
   else:
     return HttpResponse("attempts exceed 5 times")
-  
+
 '''
 verify if the signature is matched
-'''  
+'''
 def verifySign(request):
-  if request.method == 'GET':
-    try:
-      username=request.GET.get('username')  
-      user=User.objects.get(username=username)     
-      piece=Piece.objects.get(user=user)
-      signature=request.GET.get('signature')
-      if str(signature)==str(piece.signature): 
-        return HttpResponse(json.dumps({'success':1,'msg':"signature matched"}))
-      else:
-        return HttpResponse(json.dumps({'success':0,'msg':"signature not matched"}))
-    except User.DoesNotExist:
-      return HttpResponse(json.dumps({'success':0,'msg':"username not existing"}))
-    except Exception as e:
-      print '%s (%s)' % (e.message, type(e))
+    if request.method == 'GET':
+        try:
+        #      username=request.GET.get('username')
+            signature=request.GET.get('signature')
+            service_uid=request.GET.get('service_uid')
+            service_name=request.GET.get('service_name')
+            service=Service.objects.get(service_name=service_name)
+            #      user=User.objects.get(username=username)
+            piece=Piece.objects.get(service_name=service_name,service_uid=service_uid)
+            '''requestType !=None means this is a verification for binding'''
+            if request.GET.get('requestType')=='bind':
+
+                Binding.objects.create(service=service,service_uid=service_uid,piece=piece)
+                if str(signature)==str(piece.signature):
+                    return HttpResponse(json.dumps({'success':1,'msg':"signature matched"}))
+                else:
+                    return HttpResponse(json.dumps({'success':0,'msg':"signature not matched"}))
+            if request.GET.get('requestType')=='verify':
+                if str(signature)==str(piece.signature):
+                    binding=Binding.objects.get(service=service,service_uid=service_uid)
+                    Verify.delete(binding=binding)
+                    return HttpResponse(json.dumps({'success':1,'msg':"signature matched"}))
+                else:
+                    binding=Binding.objects.get(service=service,service_uid=service_uid)
+                    verify=Verify.objects.get(binding=binding)
+                    if verify.attempt_time==5:
+                        verify.delete()
+                        return HttpResponse(json.dumps({'success':0,'msg':"signature not matched"}))
+                    else :
+                        verify.attempt_time+=1
+                        return HttpResponse(json.dumps({'success':0,'msg':"signature not matched,,you still have %d times attempt"%(6-verify.attmept_time)}))
+
+
+        except User.DoesNotExist:
+            return HttpResponse(json.dumps({'success':0,'msg':"username not existing"}))
+        except Exception as e:
+            print '%s (%s)' % (e.message, type(e))
 
 '''
 modify the signature
@@ -292,3 +314,52 @@ def send_notification(request):
     })
     apns.gateway_server.send_notification(token_hex, payload)
     return HttpResponse()
+def isBound(service_name,service_uid):
+    try:
+        service=Service.objects.get(service_name=service_name)
+        binding=Binding.objects.get(service=service,service_uid=service_uid)
+        return binding
+    except Service.DoesNotExist:
+        return 0
+    except Binding.DoesNotExist:
+        return 0
+
+def serviceLoginRequest(request):
+    #if request.method=='POST':
+        service_name=request.POST['service_name']
+        print service_name
+        service_uid=request.uid['service_uid']
+        binding=isBound(service_name,service_uid)
+        if binding==0:
+            return HttpResponse(json.dumps({'success':0,'msg':"service_uid %d is not bound in SignPass"}%service_uid))
+        else:
+            try:
+                #service=Service.objects.get(service_name)
+                #binding=Binding.objects.get(service=service,service_uid=service_uid)
+                iPhone=IPhone.objects.get(binding.piece)
+                apns = APNs(use_sandbox=True, cert_file='E:/Certificates.pem')
+                # Send a notification
+                token_hex = iPhone.dev_token
+                payload = Payload(alert="You have a login request from %s"%service_name, sound="default", badge=1, custom={
+                    'service_uid':service_uid,'service_name':service_name,'requestType':'verify'
+                })
+                apns.gateway_server.send_notification(token_hex, payload)
+                Verify.objects.create(binding=binding,attempt_time=0,timestamp=datetime.datetime.now())
+                return HttpResponse()
+            except IPhone.DoesNotExist:
+                return HttpResponse(json.dumps({'success':0,'msg':"iphone not existing"}))
+            except Exception as e:
+                print '%s (%s)' % (e.message, type(e))
+
+def loginRequestPoll(request):
+    if request.method=="POST":
+        service_name=request.POST["service_name"]
+        service_uid=request.POST["service_uid"]
+    try:
+        service=Service.objects.get(service_name=service_name)
+        if Binding.objects.get(service=service,service_uid=service_uid):
+            return HttpResponse(json.dumps({'success':1,'msg':"login successed"}))
+    except Service.DoesNotExist:
+        return HttpResponse(json.dumps({'success':0,'msg':"service %s is not registered"%service_name}))
+    except Binding.DoesNotExist:
+        return HttpResponse(json.dumps({'success':0,'msg':"binding is NOT existing"}))

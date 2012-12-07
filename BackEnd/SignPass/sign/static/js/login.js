@@ -18,20 +18,34 @@ $(function () {
                 alert(data.msg);
                 return;
             }
-
+            $("#dialog").dialog({
+                buttons:[
+                    {
+                        text:"OK",
+                        click:function () {
+                            $(this).dialog("close");
+                            $("#uid").focus();
+                        }
+                    }
+                ],
+                modal:true,
+                title:"Login with SignPass"
+            });
 			var intervalID = window.setInterval(function () {
-                $.post("/signpass/service/bind", {
+                $.post("/signpass/service/bindRequestPoll", {
 				username:$("#username").val(),
 				service_name:$("#service_name").val(),
 				service_uid:$("#service_uid").val()
                 }, function (data) {
                     if (JSON.parse(data).success) {
                         window.clearInterval(intervalID);
+                        alert("Successfully connected with SignPass!");
                     }
                 });
             }, 3000);
 			setTimeout(function () {
 							window.clearInterval(intervalID);
+                alert("Sorry! Connection with SignPass failed!");
 						}, 180000);
 
 

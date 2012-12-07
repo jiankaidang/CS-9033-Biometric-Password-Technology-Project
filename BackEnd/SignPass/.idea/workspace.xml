@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40bfde23-e721-4938-a036-fda8e6ce664b" name="Default" comment="" />
+    <list default="true" id="40bfde23-e721-4938-a036-fda8e6ce664b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SignPass/urls.py" afterPath="$PROJECT_DIR$/SignPass/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sign/static/js/login.js" afterPath="$PROJECT_DIR$/sign/static/js/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sign/views.py" afterPath="$PROJECT_DIR$/sign/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/bind.html" afterPath="$PROJECT_DIR$/templates/bind.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bank/banksite/static/js/signpass.js" afterPath="$PROJECT_DIR$/../bank/banksite/static/js/signpass.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../bank/banksite/views.py" afterPath="$PROJECT_DIR$/../bank/banksite/views.py" />
+    </list>
     <ignored path="SignPass.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/" />
@@ -21,15 +30,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pkg_resources.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/distribute-0.6.27-py2.7.egg/pkg_resources.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="958" column="0" selection-start="33340" selection-end="33340" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="apns.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sign/apns.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -39,11 +39,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signpass.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="signpass.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../bank/banksite/static/js/signpass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="35" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="35" column="13" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.5727003">
+              <folding>
+                <marker date="1354903149000" expanded="false" signature="584:598" placeholder="..." />
+                <marker date="1354903149000" expanded="true" signature="674:689" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bind.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/bind.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="17" selection-start="430" selection-end="430" vertical-scroll-proportion="-7.04">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="19" selection-start="304" selection-end="304" vertical-scroll-proportion="-6.4">
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,19 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Certificates.pem" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sign/Certificates.pem">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="15" selection-end="15" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sign/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="189" selection-start="5058" selection-end="5058" vertical-scroll-proportion="0.61270803">
+            <state line="329" column="26" selection-start="13741" selection-end="13741" vertical-scroll-proportion="-4.730769">
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -89,16 +107,16 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SignPass/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="73" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0">
+            <state line="20" column="48" selection-start="1271" selection-end="1271" vertical-scroll-proportion="-11.692307">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wsgi.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SignPass/wsgi.py">
+      <file leaf-file-name="login.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sign/static/js/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="51" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0">
+            <state line="48" column="35" selection-start="1040" selection-end="1705" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -134,8 +152,12 @@
         <option value="$PROJECT_DIR$/sign/models.py" />
         <option value="$PROJECT_DIR$/sign/apns.py" />
         <option value="$PROJECT_DIR$/SignPass/settings.py" />
+        <option value="$PROJECT_DIR$/sign/static/js/login.js" />
+        <option value="$PROJECT_DIR$/templates/bind.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/SignPass/urls.py" />
         <option value="$PROJECT_DIR$/sign/views.py" />
+        <option value="$PROJECT_DIR$/../bank/banksite/static/js/signpass.js" />
       </list>
     </option>
   </component>
@@ -257,7 +279,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.General" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -450,7 +472,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.67902994" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" weight="0.3366619" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -529,27 +551,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../bank/banksite/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="1" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SignPass/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="59" selection-start="3486" selection-end="3486" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SignPass/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="51" selection-start="869" selection-end="869" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../bank/banksite/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="45" selection-start="645" selection-end="645" vertical-scroll-proportion="0.40356082">
@@ -567,13 +568,6 @@
     <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/distribute-0.6.27-py2.7.egg/pkg_resources.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="958" column="0" selection-start="33340" selection-end="33340" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../bank/banksite/static/js/signpass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="35" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -599,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sign/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="24" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sign/static/js/accounts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -627,18 +614,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sign/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="24" selection-start="507" selection-end="507" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sign/static/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="35" selection-start="1040" selection-end="1705" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/bind.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="17" selection-start="430" selection-end="430" vertical-scroll-proportion="-7.04">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="19" selection-start="304" selection-end="304" vertical-scroll-proportion="-6.4">
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SignPass/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="73" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.0">
+        <state line="20" column="48" selection-start="1271" selection-end="1271" vertical-scroll-proportion="-11.692307">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sign/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="189" selection-start="5058" selection-end="5058" vertical-scroll-proportion="0.61270803">
+        <state line="329" column="26" selection-start="13741" selection-end="13741" vertical-scroll-proportion="-4.730769">
           <folding>
             <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../bank/banksite/static/js/signpass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="13" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.5727003">
+          <folding>
+            <marker date="1354903149000" expanded="false" signature="584:598" placeholder="..." />
+            <marker date="1354903149000" expanded="true" signature="674:689" placeholder="..." />
           </folding>
         </state>
       </provider>

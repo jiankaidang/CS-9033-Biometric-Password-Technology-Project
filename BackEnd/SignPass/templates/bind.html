@@ -10,7 +10,6 @@
 {%block title%}Login{%endblock%}
 
 {%block content%}
-		<h1>Heading</h1>
  <form action="" method="post" id="login_form">
         {% csrf_token %}
         <table id="secureLogonTable" width="270" height="170" border="0" cellpadding="0"
@@ -40,7 +39,7 @@
             <tr align="center">
                 <td width="5">&nbsp;</td>
                 <td height="35" colspan="3" class="bodyTextSecureLogon">
-                     <input type="submit" value="Bind SignPass"/>
+                     <input type="submit" value="Connect with SignPass"/>
                 </td>
             </tr>
               <input id="service_name" name="service_name" value="{{service_name}}" type="hidden"/>
@@ -48,6 +47,8 @@
 			 
         </table>
     </form>
-   
+    <div id="dialog" style="display: none;"><p>We have sent the SignPass Notification to your iPhone!</p>
+
+        <p style="font-size:0.8em">Please sign your signature to verify!</p></div>
 {%endblock%}
 

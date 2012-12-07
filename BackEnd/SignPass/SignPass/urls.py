@@ -7,7 +7,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^signpass/service/checkBinding$','sign.views.checkBinding'), 
     url(r'^signpass/service/bind$','sign.views.bind'),
-    url(r'^signpass/service/bindRequestPoll$','sign.views.bindRequestPoll$'),
+    url(r'^signpass/service/bindRequestPoll$','sign.views.bindRequestPoll'),
     url(r'^signpass/service$','sign.views.index'), 
     url(r'^signpass/ios/(?P<username>[^/]+)/check_username/$','sign.views.checkUsername'),
     url(r'^signpass/(?P<service_name>[^/]+)/(?P<service_uid>[^/]+)/bindRequestFromService$','sign.views.bindRequestFromService'),    
@@ -17,9 +17,10 @@ urlpatterns = patterns('',
     url(r'^signpass/ios/modify/$','sign.views.modifySign'), 
     url(r'^signpass/(?P<service_name>[^/]+)/(?P<service_uid>[^/]+)/serviceLogin$','sign.views.serviceLogin'),
     url(r'^signpass/send_notification$', 'sign.views.send_notification'),
+    url(r'^signpass/service/loginRequestPoll$','sign.views.loginRequestPoll'),
+    url(r'^signpass/service/serviceLoginRequest$','sign.views.serviceLoginRequest'),
 
-
-  # Examples:
+    # Examples:
   # url(r'^$', 'SignPass.views.home', name='home'),
   # url(r'^SignPass/', include('SignPass.foo.urls')),
 
