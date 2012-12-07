@@ -4,6 +4,7 @@ from django.template import RequestContext
 from django.http import HttpResponse, Http404
 from banksite.models import User
 import json
+import websocket
 
 def login_page(request):
     return render_to_response('banksite/login.html', context_instance=RequestContext(request))
@@ -48,7 +49,9 @@ def login(request):
 
 
 def accounts(request):
-    return render_to_response('banksite/accounts.html', {'uid': request.session['uid']},
+    uid = request.session['uid']
+    user = User.objects.get(uid=uid)
+    return render_to_response('banksite/accounts.html', {'uid': uid, 'service_uid': user.id},
         context_instance=RequestContext(request))
 
 
@@ -60,3 +63,16 @@ def logout(request):
     response = redirect('login_page')
     response.delete_cookie('uid')
     return response
+
+
+def signpass_login(request):
+    post = request.POST
+    service_uid = post['service_uid']
+    user = User.objects.get(uid=service_uid)
+    service_name = 'chase'
+    ws = websocket.create_connection(
+        "ws://192.168.0.15:8000/signpass/" + service_name + "/" + user.id + "/serviceLogin")
+    ws.send()
+    print("socket")
+    result = ws.recv()
+    ws.close()

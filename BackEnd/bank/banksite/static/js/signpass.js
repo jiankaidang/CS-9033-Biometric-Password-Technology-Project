@@ -50,5 +50,5 @@ $(function () {
     });
 });
 function openSignPassWindow() {
-    window.open("http://192.168.0.1:8000/signpass/chase/service_uid=" + $("#uid").val(), "SignPass");
+    window.open("http://192.168.0.15:8000/signpass/chase/" + $("#service_uid").val() + "/bindRequestFromService", "SignPass");
 }
