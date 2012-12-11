@@ -23,7 +23,8 @@ def check_user(request):
         if user.password != post['password']:
             return {
                 'success': False,
-                'msg': 'The Password you entered is not correct.'
+                'msg': 'The Password you entered is not correct.',
+                'uid': user.id
             }
         return {
             'success': True,

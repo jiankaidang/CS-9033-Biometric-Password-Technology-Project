@@ -16,6 +16,7 @@ $.ajaxSetup({
     }
 });
 var backEndIP = "http://128.238.243.63:8000";
+var service_uid, type = "bind";
 $(function () {
     $(document.body).append('<div id="dialog" style="display: none;">' +
         '<p>First time login with SignPass?</p>' +
@@ -34,36 +35,40 @@ $(function () {
                 alert(data.msg);
                 return;
             }
-            $.ajax(backEndIP + "/signpass/service/serviceLoginRequest",{
-                data:{
-                    service_uid:data.uid,
-                    service_name:"chase"
-                },
-                jsonp:"callbacke"
-            } , function (data) {
-                if (!JSON.parse(data).success) {
-                    alert(data.msg);
-                    return;
-                }
-                var intervalID = window.setInterval(function () {
-                    $.post(backEndIP + "/signpass/service/loginRequestPoll", {
-                        service_name:$("#service_name").val(),
-                        service_uid:$("#service_uid").val()
-                    }, function (data) {
-                        if (JSON.parse(data).success) {
-                            window.clearInterval(intervalID);
-                            location.href = "/signpass_login?uid=" + $("#uid").val();
-                        }
-                    });
-                }, 3000);
-                setTimeout(function () {
-                    window.clearInterval(intervalID);
-                    alert("Sorry! Connection with SignPass failed!");
-                }, 180000);
-            });
+            service_uid = data.uid;
+            type = "verify";
+            openSignPassWindow();
+            /*$.ajax(backEndIP + "/signpass/service/serviceLoginRequest", {
+             data:{
+             service_uid:data.uid,
+             service_name:"chase"
+             },
+             dataType:"jsonp",
+             success:function (data) {
+             if (!JSON.parse(data).success) {
+             alert(data.msg);
+             return;
+             }
+             var intervalID = window.setInterval(function () {
+             $.post(backEndIP + "/signpass/service/loginRequestPoll", {
+             service_name:$("#service_name").val(),
+             service_uid:$("#service_uid").val()
+             }, function (data) {
+             if (JSON.parse(data).success) {
+             window.clearInterval(intervalID);
+             location.href = "/signpass_login?uid=" + $("#uid").val();
+             }
+             });
+             }, 3000);
+             setTimeout(function () {
+             window.clearInterval(intervalID);
+             alert("Sorry! Connection with SignPass failed!");
+             }, 180000);
+             }
+             });*/
         });
     });
 });
 function openSignPassWindow() {
-    window.open(backEndIP + "/signpass/chase/" + $("#service_uid").val() + "/bindRequestFromService", "SignPass");
+    window.open(backEndIP + "/signpass/chase/" + (service_uid || $("#service_uid").val()) + "/bindRequestFromService?type=" + type, "SignPass");
 }
