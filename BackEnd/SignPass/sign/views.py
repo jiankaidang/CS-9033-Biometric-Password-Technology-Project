@@ -1,3 +1,4 @@
+import random
 from django.http import HttpResponse
 from models import *
 from django.shortcuts import render_to_response
@@ -26,13 +27,16 @@ def register(request):
     except User.DoesNotExist:      
       email=request.GET.get('email') 
       signature=request.GET.get('signature') 
-      udid=request.GET.get('signature') 
+      udid=request.GET.get('udid')
       dev_token=request.GET.get('dev_token')
       print "udid="+udid
       try:
         user=User.objects.create(username=username,email=email)
         piece=Piece.objects.create(user=user,signature=signature)
-        IPhone.objects.create(piece=piece,udid=udid,dev_token=dev_token)
+        iPhone=IPhone.objects.get(dev_token=dev_token)
+        iPhone.piece=piece
+        iPhone.udid=udid
+        iPhone.save()
         return HttpResponse(json.dumps({'success':1,'msg':"%s is created successfully"% username}))
       except Exception as e:
         print '%s (%s)' % (e.message, type(e))
@@ -161,23 +165,23 @@ verify if the signature is matched
 def verifySign(request):
     if request.method == 'GET':
         try:
-        #      username=request.GET.get('username')
+            username=request.GET.get('username')
             signature=request.GET.get('signature')
             service_uid=request.GET.get('service_uid')
             service_name=request.GET.get('service_name')
             service=Service.objects.get(service_name=service_name)
-            #      user=User.objects.get(username=username)
-            piece=Piece.objects.get(service_name=service_name,service_uid=service_uid)
+            user=User.objects.get(username=username)
+            piece=Piece.objects.get(user=user)
             '''requestType !=None means this is a verification for binding'''
+            isMatched=random.choice([True,False])
             if request.GET.get('requestType')=='bind':
-
-                Binding.objects.create(service=service,service_uid=service_uid,piece=piece)
-                if str(signature)==str(piece.signature):
+                if isMatched:#str(signature)==str(piece.signature):
+                    Binding.objects.create(service=service,service_uid=service_uid,piece=piece)
                     return HttpResponse(json.dumps({'success':1,'msg':"signature matched"}))
                 else:
                     return HttpResponse(json.dumps({'success':0,'msg':"signature not matched"}))
             if request.GET.get('requestType')=='verify':
-                if str(signature)==str(piece.signature):
+                if isMatched:#str(signature)==str(piece.signature):
                     binding=Binding.objects.get(service=service,service_uid=service_uid)
                     Verify.delete(binding=binding)
                     return HttpResponse(json.dumps({'success':1,'msg':"signature matched"}))
@@ -229,7 +233,7 @@ def requestFromIOS(request):
         if udid!=iPhone.udid:
           iPhone.udid=udid
           iPhone.save()
-    except iPhone.DoesNotExist:
+    except IPhone.DoesNotExist:
         iPhone = IPhone.objects.create(dev_token=dev_token,udid=udid)
     return HttpResponse()
 

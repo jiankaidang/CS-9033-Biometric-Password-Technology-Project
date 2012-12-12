@@ -4,7 +4,6 @@
  * Time: 5:20 PM
  */
 $(function () {
-    var LOGIN_CHECK_SUCCEEDED = 'login_check_succeeded';
     $("#login_form").submit(function () {
         var login_form = $(this);
         $.post("/signpass/service/checkBinding", {
@@ -14,23 +13,9 @@ $(function () {
         }, function (data) {
             data = JSON.parse(data);
             if (!data.success) {
-                login_form.data(LOGIN_CHECK_SUCCEEDED, false);
                 alert(data.msg);
                 return;
             }
-            $("#dialog").dialog({
-                buttons:[
-                    {
-                        text:"OK",
-                        click:function () {
-                            $(this).dialog("close");
-                            $("#uid").focus();
-                        }
-                    }
-                ],
-                modal:true,
-                title:"Login with SignPass"
-            });
             var intervalID = window.setInterval(function () {
                 $.post("/signpass/service/bindRequestPoll", {
                     username:$("#username").val(),

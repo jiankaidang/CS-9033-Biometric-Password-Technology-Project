@@ -15,7 +15,7 @@ $.ajaxSetup({
         }
     }
 });
-var backEndIP = "http://128.238.243.63:8000";
+var backEndIP = "http://192.168.10.104:8000";
 var service_uid, type = "bind";
 $(function () {
     $(document.body).append('<div id="dialog" style="display: none;">' +

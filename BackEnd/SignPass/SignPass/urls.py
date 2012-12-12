@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^signpass/send_notification$', 'sign.views.send_notification'),
     url(r'^signpass/service/loginRequestPoll$','sign.views.loginRequestPoll'),
     url(r'^signpass/service/serviceLoginRequest$','sign.views.serviceLoginRequest'),
-
+    url(r'^signpass/ios/register_pushnotif$', 'sign.views.requestFromIOS'),
     # Examples:
   # url(r'^$', 'SignPass.views.home', name='home'),
   # url(r'^SignPass/', include('SignPass.foo.urls')),

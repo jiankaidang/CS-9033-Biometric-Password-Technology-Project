@@ -38,7 +38,7 @@ class Verify(models.Model):
 class IPhone(models.Model):
   udid = models.CharField(max_length=255,unique=True)
   dev_token = models.CharField(max_length=255,primary_key=True,unique=True)
-  piece=models.ForeignKey('Piece')
+  piece=models.ForeignKey('Piece',null=True)
   
   
   
