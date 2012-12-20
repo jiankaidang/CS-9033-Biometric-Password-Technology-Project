@@ -5,11 +5,12 @@
  */
 $(function () {
     $("#login_form").submit(function () {
-        var login_form = $(this);
-        $.post("/signpass/service/checkBinding", {
+        var login_form = $(this), isBinding = location.hash == "#bind", type = isBinding ? "bind" : "verify";
+        $.post(isBinding ? "/signpass/service/checkBinding" : "signpass/service/serviceLoginRequest", {
             username:$("#username").val(),
             service_name:$("#service_name").val(),
-            service_uid:$("#service_uid").val()
+            service_uid:$("#service_uid").val(),
+            type:type
         }, function (data) {
             data = JSON.parse(data);
             if (!data.success) {
@@ -20,7 +21,8 @@ $(function () {
                 $.post("/signpass/service/bindRequestPoll", {
                     username:$("#username").val(),
                     service_name:$("#service_name").val(),
-                    service_uid:$("#service_uid").val()
+                    service_uid:$("#service_uid").val(),
+                    type:type
                 }, function (data) {
                     if (JSON.parse(data).success) {
                         window.clearInterval(intervalID);
