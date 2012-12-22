@@ -5,16 +5,12 @@ CS 9033 FALL 2012
 SignPass
 
 Maneli Kadkhodazadeh
-mkadkh01@students.poly.edu
 
-Changpeng Li 
-cli12@students.poly.edu
+Changpeng Li
 
-Jiankai Dang (Team Leader) 
-jdang01@students.poly.edu
+Jiankai Dang (Team Leader)
 
-Yang Li 
-yli28@students.poly.edu
+Yang Li
 
 With our application, we seek to re-create the benefits of the in-person signature to replace complex and insecure username/password combinations. The application will allow users to login easily to their bank accounts simply and quickly using a touch-signature or touch-phrase.
 
