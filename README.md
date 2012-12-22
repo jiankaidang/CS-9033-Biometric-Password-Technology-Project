@@ -51,4 +51,4 @@ System Software Architecture
 
  Back-End Software Program (Server Side) -- Python, Django, SQL
 
- Bank Services (third-party software, including Bank website and Bank Server software program) -- Python, Django, HTML, JavaScript, CSS
+ Bank Services (third-party software, including Bank website and Bank Server software program) -- Python, Django, HTML, JavaScript, jQuery, CSS
